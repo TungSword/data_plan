@@ -9,4 +9,5 @@
 
 二维几何的引入：使用canvas画二维图形，二维绘图框架待定
 三维物体的引入：使用three.js框架
-openlayers二维地图引入：认识中国地图，引入天地图
+openlayers二维地图引入：认识中国地图，引入天地图，地理数据：https://datav.aliyun.com/portal/school/atlas/area_selector#&lat=31.769817845138945&lng=104.29901249999999&zoom=4
+
