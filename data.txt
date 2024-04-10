@@ -1,16 +1,11 @@
 增加猴子警长有声故事：https://www.qtfm.cn/channels/342746/1
 
-常用英语单词：https://mp.weixin.qq.com/s?__biz=MjM5MTQ4ODczOQ==&mid=2654738281&idx=8&sn=2c629951141de72c14f293b28602d0aa&chksm=bd7c78e58a0bf1f34ecc77a4f270ded4353390088d73f4b200c8d5d2647444380e18724e5a9d&scene=27
-常用的1000个单词：https://1000mostcommonwords.com/1000-most-common-english-words/
-english speack：https://www.englishspeak.com/
-
-《Dinopaws》（快乐小恐龙）：这是一部BBC的动画新作，主角是三只小恐龙。通过他们的探险故事，可以激发小朋友的想象力，并鼓励他们去认知周围的世界。这部动画以其精美的画面和符合幼儿心理发展的情节设计而备受好评。
-《Dino Buddies》（恐龙伙伴）：这是一个英语故事动画片，适合学前和小学低年级的孩子们观看。故事讲述了四只好奇心旺盛的小恐龙的冒险经历，孩子们可以跟着他们一起冒险，并在过程中学习到入门级的英语知识。
-小恐龙大冒险
-数学速算巧算：平十法，破十法
+数学速算巧算：平十法，破十法等等
 
 古诗填空，古诗中确某个字，填写一些字
 古诗匹配，出上句，填下句
+
+英语自然拼读 + 单词学习
 
 二维几何的引入：使用canvas画二维图形
 三维物体的引入：使用three.js框架
