@@ -13,4 +13,4 @@ openlayers二维地图引入：认识中国地图，引入天地图，地理数�
 
 数学专业网站：https://www.geogebra.org/
 
-echart人体内脏引入
+echart
