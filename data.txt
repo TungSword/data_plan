@@ -1,18 +1,20 @@
 增加猴子警长有声故事：https://www.qtfm.cn/channels/342746/1
 
 数学速算巧算：平十法，破十法等等
+数学专业网站：https://www.geogebra.org/
 
 古诗填空，古诗中确某个字，填写一些字
 古诗匹配，出上句，填下句
 
 英语自然拼读 + 单词学习
 
-二维几何的引入：使用canvas画二维图形，二维绘图框架待定
 三维物体的引入：使用three.js框架
+
+二维几何的引入：使用canvas画二维图形，二维绘图框架待定
+
+地图和图标：
 openlayers二维地图引入：认识中国地图，行政区域
 各个省，市，区介绍：自然，人文，历史，经济
 地形数据：https://datav.aliyun.com/portal/school/atlas/area_selector#&lat=31.769817845138945&lng=104.29901249999999&zoom=4
+
 echart图表引入：使用场景待定
-
-数学专业网站：https://www.geogebra.org/
-
