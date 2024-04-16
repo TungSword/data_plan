@@ -1,6 +1,8 @@
 Top1：地图 + 英语
 Top2：地图 + 唐诗宋词
 
+语音转文字：https://www.iflyrec.com/html/addMachineOrder.html
+
 生成二维码：https://cli.im/url
 
 增加猴子警长有声故事：https://www.qtfm.cn/channels/342746/1
