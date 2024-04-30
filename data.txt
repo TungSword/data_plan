@@ -20,7 +20,7 @@ https://zhuanlan.zhihu.com/p/336735691
 
 三维物体的引入：使用three.js框架
 
-二维几何的引入：使用canvas画二维图形，二维绘图框架:Fabric.js（第一选择），Paper.js（第二选择）
+二维几何的引入：使用canvas画二维图形，二维绘图框架:Paper.js（第一选择，更适合数学场景），Fabric.js（第二选择）
 
 地图和图标：
 openlayers二维地图引入：认识中国地图，行政区域
