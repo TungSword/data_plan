@@ -3,6 +3,8 @@ Top2：地图 + 唐诗宋词
 https://cnkgraph.com/
 在index.html中引入    <script src="https://cdn.jsdelivr.net/npm/ol@9.1.0/dist/ol.js"></script>
 
+大模型紫东太初：https://taichu-web.ia.ac.cn/
+
 语音转文字：https://www.iflyrec.com/html/addMachineOrder.html
 https://zhuanlan.zhihu.com/p/336735691
 
