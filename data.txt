@@ -2,12 +2,14 @@
 
 Top1：地图 + 英语
 Top2：地图 + 唐诗宋词
-https://cnkgraph.com/
+知识图谱：https://cnkgraph.com/
 在index.html中引入    <script src="https://cdn.jsdelivr.net/npm/ol@9.1.0/dist/ol.js"></script>
 下载PDF图书：https://zh.z-library.rs/
 
 大模型紫东太初：https://taichu-web.ia.ac.cn/
 中国科普博览：https://www.kepu.net.cn/
+
+古诗词：https://www.xungushici.com/
 
 语音转文字：https://www.iflyrec.com/html/addMachineOrder.html
 https://zhuanlan.zhihu.com/p/336735691
