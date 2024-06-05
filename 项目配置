@@ -8,3 +8,24 @@ echarts CDN
 
 压缩包分析：
 rollup-plugin-visualizer
+
+visualizer({
+            open: true
+        }),
+
+three引入cdn
+vite.config.js
+ "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/+esm"
+
+index.html
+    <script type="importmap">
+        {
+            "imports":{
+                "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.min.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+            }
+        }
+    </script>
+
+three.js引入
+import {OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/controls/OrbitControls.js";
