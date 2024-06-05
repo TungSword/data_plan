@@ -1,23 +1,21 @@
 echarts CDN
+ {
+name:"echarts",
+var: "echarts",
+path:"https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"
+}
 
-                {
-                    name:"echarts",
-                    var: "echarts",
-                    path:"https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"
-                }
 
 压缩包分析：
 rollup-plugin-visualizer
+visualizer({open: true}),
 
-visualizer({
-            open: true
-        }),
 
 three引入cdn
 {
-                    name: "three",
-                    path: ""
-                }
+name: "three",
+path: ""
+}
 
 index.html
     <script type="importmap">
