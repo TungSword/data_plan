@@ -14,8 +14,10 @@ visualizer({
         }),
 
 three引入cdn
-vite.config.js
- "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/+esm"
+{
+                    name: "three",
+                    path: ""
+                }
 
 index.html
     <script type="importmap">
