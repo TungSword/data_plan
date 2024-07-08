@@ -1,0 +1,64 @@
+package com.xx.router_1;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
+import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
+import org.springframework.cloud.gateway.route.RouteDefinition;
+import org.springframework.cloud.gateway.route.RouteDefinitionRepository;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriComponentsBuilder;
+import reactor.core.publisher.Mono;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * DynamicRouteDefinitionRepository
+ *
+ * @author huawei
+ * @since 2024-07-05
+ */
+@Component
+public class DynamicRouteService implements ApplicationEventPublisherAware {
+    @Autowired
+    private RouteDefinitionRepository routeDefinitionRepository;
+
+    private ApplicationEventPublisher publisher;
+
+    private void notifyChanged() {
+        this.publisher.publishEvent(new RefreshRoutesEvent(routeDefinitionRepository));
+    }
+
+    public void save(String routeId, String uri) {
+        RouteDefinition routeDefinition = new RouteDefinition();
+        routeDefinition.setId(routeId);
+        routeDefinition.setUri(UriComponentsBuilder.fromHttpUrl(uri).build().toUri());
+        PredicateDefinition predicateDefinition = new PredicateDefinition();
+        predicateDefinition.setName("Path");
+        Map<String, String> predicateParams = new HashMap<>(8);
+
+        predicateParams.put("_genkey_0", "/business/**");
+        predicateDefinition.setArgs(predicateParams);
+        routeDefinition.setPredicates(Collections.singletonList(predicateDefinition));
+        routeDefinitionRepository.save(Mono.just(routeDefinition)).subscribe();
+        notifyChanged();
+    }
+
+    public void deleteRoute() {
+        routeDefinitionRepository.delete(Mono.just("xx-business-test2")).subscribe();
+        notifyChanged();
+    }
+
+
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+        this.publisher = applicationEventPublisher;
+    }
+
+    public void addRoute() {
+        save("xx-business-test2", "http://localhost:8011");
+    }
+}
