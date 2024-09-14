@@ -39,3 +39,5 @@ openlayers二维地图引入：认识中国地图，行政区域
 中国地理概览：https://zhuanlan.zhihu.com/p/577752112
 
 echart图表引入：使用场景待定
+
+https://avd.aliyun.com/
