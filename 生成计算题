@@ -1,0 +1,99 @@
+      <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
+import org.apache.poi.xwpf.usermodel.TableRowAlign;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.poi.xwpf.usermodel.XWPFTableCell;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTblBorders;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.STBorder;
+
+/**
+ * CreateWordTest
+ *
+ * @author huawei
+ * @since 2024-10-12
+ */
+public class CreateWordTest {
+    private static List<String> timus = new ArrayList<>();
+
+    private static List<String> tmpTimus = new ArrayList<>();
+    private static final String xiahuaxian = "____";
+
+    private static int index = 0;
+
+    public static void main(String[] args) throws Exception {
+        createList();
+        createPoiWord();
+    }
+
+    public static void createList() {
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 0; j <= i; j++) {
+                int right = i - j;
+                timus.add(j + " + " + xiahuaxian + " = " + i);
+                timus.add(j + " + " + right + " = " + xiahuaxian);
+                timus.add(xiahuaxian + " + " + right + " = " + i);
+
+                timus.add(i + " = " + j + " + " + xiahuaxian);
+                timus.add(xiahuaxian + " = " + j + " + " + right);
+                timus.add(i + " = " + xiahuaxian + " + " + right);
+            }
+        }
+    }
+
+    public static void createPoiWord() throws IOException {
+        XWPFDocument document = new XWPFDocument();
+        while (index <= 5) {
+            XWPFTable table = document.createTable(1, 4);
+            CTTblBorders ctTblBorders = table.getCTTbl().getTblPr().addNewTblBorders();
+            ctTblBorders.addNewBottom().setVal(STBorder.Enum.forString("none"));
+            ctTblBorders.addNewTop().setVal(STBorder.Enum.forString("none"));
+            ctTblBorders.addNewLeft().setVal(STBorder.Enum.forString("none"));
+            ctTblBorders.addNewRight().setVal(STBorder.Enum.forString("none"));
+            ctTblBorders.addNewInsideH().setVal(STBorder.Enum.forString("none"));
+            ctTblBorders.addNewInsideV().setVal(STBorder.Enum.forString("none"));
+
+            table.setTableAlignment(TableRowAlign.CENTER);
+            List<XWPFTableCell> tableCells = table.getRow(0).getTableCells();
+            for (XWPFTableCell tableCell : tableCells) {
+                tableCell.setText(getRandomTimu());
+                tableCell.setWidth(String.valueOf(30 * 72));
+                tableCell.getParagraphs().get(0).setAlignment(ParagraphAlignment.CENTER);
+                tableCell.getParagraphArray(0).createRun().setFontSize(14);
+            }
+            document.createParagraph();
+        }
+
+        FileOutputStream out = new FileOutputStream("example.docx");
+        document.write(out);
+        out.close();
+    }
+
+    public static String getRandomTimu() {
+        initTmp();
+        Random random = new Random();
+        int i = random.nextInt(tmpTimus.size());
+        return tmpTimus.remove(i);
+    }
+
+    private static void initTmp() {
+        if (CollectionUtils.isNotEmpty(tmpTimus)) {
+            return;
+        }
+        tmpTimus.addAll(timus);
+        index++;
+    }
+}
